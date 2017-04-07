@@ -1,0 +1,29 @@
+Flavio Andrade
+4-5-17
+
+The InverseTransform program takes random numbers distributed uniformly
+between [0, 1] and uses the inverse() method to calculate x so that F(x) = u,
+where u is the random number generated between [0, 1]. F(x) is the
+cumulative distribution function for a random variable.
+
+In this particular program the cumulative distribution function (CDF) of the
+inverse of the exponential random variable was used.
+The CDF of a random variable X that is exponentially distributed is F(x) = 1 - e^(-λx).
+The inverse of the CDF a random variable X that is exponentially distributed is
+x = F^-1(u) = -(㏑(1 - u) / λ).
+
+The program took values of u between [0, 1] which are taken to be probabilities (p)
+that would result from a cumulative distribution F(x) such that P(X <= x) = p, and returned
+the  x.
+
+This program models waiting time with parameter lambda. The result from the
+inverse method is multiplied by 60 to get the number of minutes for the waiting
+time. This value is rounded up and down separately to determine what interval on
+the x-axis it falls on. The program then plots the waiting time in a given interval
+and the number of times that a waiting time in a given interval occurs.
+The parameter lambda determines what the distribution of the frequencies of the
+waiting times look like. If the value of lambda is increased, there is a higher
+concentration in waiting times toward the [0, 10] minute mark on the x-axis.
+
+The program takes two command-line arguments, the number of samples to calculate,
+and the parameter lambda.
