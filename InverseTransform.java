@@ -3,7 +3,7 @@
  * Flavio Andrade
  * 4-5-2017
  * Compilation:  javac InverseTransform.java
- * Execution:    java InverseTransform numberofsamples lambda
+ * Execution:    java InverseTransform numberOfSamples lambda
  * Dependencies: StdDraw.java
  *****************************************************************************
  */
@@ -12,9 +12,9 @@ import java.awt.Font;
 
 public class InverseTransform {
 	public static int y2Scale = 0;  // Amount of time return value occurs in interval
-	public static int x2Scale = 150; // Minutes
+	public static int x2Scale = 150; // Range for waiting time.
 	public static int ymod = 10;
-    public static Font font = new Font("SansSerif", Font.PLAIN, 11);
+        public static Font font = new Font("SansSerif", Font.PLAIN, 11);
 
 	// Compute the inverse of the exponential function and pass in a
 	// uniformly distributed number to sample.
@@ -35,7 +35,7 @@ public class InverseTransform {
 		}
 	}
 
-    // Mark the x-axis using intervals of 10.
+        // Mark the x-axis using intervals of 10.
 	public static void markX(int xscale) {
 		StdDraw.setFont(font);
 		int x = -ymod / 5;
@@ -66,7 +66,7 @@ public class InverseTransform {
 		StdDraw.setPenRadius(0.01);
 		StdDraw.setCanvasSize(500, 500);
 		StdDraw.setXscale(-40, x2Scale);
-	    StdDraw.setYscale(-y1, y2Scale);
+	        StdDraw.setYscale(-y1, y2Scale);
 		StdDraw.line(0, 0, x2Scale - 5, 0); // Draw x-axis
 		StdDraw.line(0, 0, 0, y2Scale - 5); // Draw y-axis
 		markY(y2Scale);
@@ -91,12 +91,12 @@ public class InverseTransform {
 				double x2 = roundUp(value);
 				int position = (int) x2 / 10;
 				int realPosition = 0;
-				// Prevent IndexOutOfBoundsException exception.
+				// Prevent IndexOutOfBoundsException.
 				if (position < height.length) { realPosition = position; }
 				height[realPosition]++;
 				if (value * 60 <= x2 && value * 60 >= x1) {
 					int h = height[realPosition];
-					// x, y, height,  Center of rectangle          // Width and height
+					// x, y, height:  Center of rectangle     // Width and height.
 					StdDraw.rectangle((x2 - (x2 - x1) / 2 ), h, (x2 - x1) / 2, h);
 					StdDraw.show();
 					StdDraw.pause(10);
