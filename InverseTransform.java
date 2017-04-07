@@ -96,7 +96,11 @@ public class InverseTransform {
 				height[realPosition]++;
 				if (value * 60 <= x2 && value * 60 >= x1) {
 					int h = height[realPosition];
+<<<<<<< Updated upstream
 					// x, y, height:  Center of rectangle     // Width and height.
+=======
+					// x, y, height:  Center of rectangle    // Width and height
+>>>>>>> Stashed changes
 					StdDraw.rectangle((x2 - (x2 - x1) / 2 ), h, (x2 - x1) / 2, h);
 					StdDraw.show();
 					StdDraw.pause(10);
