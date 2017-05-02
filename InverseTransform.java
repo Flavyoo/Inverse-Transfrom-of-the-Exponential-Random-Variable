@@ -66,7 +66,7 @@ public class InverseTransform {
 		StdDraw.setPenRadius(0.01);
 		StdDraw.setCanvasSize(500, 500);
 		StdDraw.setXscale(-40, x2Scale);
-	    StdDraw.setYscale(-y1, y2Scale);
+	        StdDraw.setYscale(-y1, y2Scale);
 		StdDraw.line(0, 0, x2Scale - 5, 0); // Draw x-axis
 		StdDraw.line(0, 0, 0, y2Scale - 5); // Draw y-axis
 		markY(y2Scale);
